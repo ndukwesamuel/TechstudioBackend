@@ -6,12 +6,6 @@ const cors = require("cors");
 const Blog = require("./models/PostModel");
 const port = process.env.PORT || 5000;
 
-// app.use(express.static(path.join(__dirname, "/my-app")));
-
-// app.get("*", (req, res) => {
-//   res.sendFile(path.join(__dirname, "/my-app/build/", "index.html"));
-// });
-
 mongoose
   .connect("mongodb://localhost:27017/the_new_text")
   .then((result) => console.log("connect db"))
@@ -48,6 +42,12 @@ app.get("/", (req, res) => {
     .catch((err) => {
       console.log(err);
     });
+});
+
+app.use(express.static(path.join(__dirname, "/my-app")));
+
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "/my-app/build/", "index.html"));
 });
 
 app.listen(port, () => {
