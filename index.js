@@ -22,10 +22,10 @@ app.get("/test", (req, res) => {
 app.get("/", (req, res) => {
   // res.json("")
   let data = [
-    { name: "tunde" },
-    { name: "emeka" },
-    { name: "kaka" },
-    { name: "peter" },
+    { name: "tunde", id: 1 },
+    { name: "emeka", id: 2 },
+    { name: "kaka", id: 3 },
+    { name: "peter", id: 4 },
   ];
   res.json(data);
 });
