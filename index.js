@@ -14,34 +14,9 @@ mongoose
 app.use(express.json());
 app.use(cors());
 
-app.get("/testing_blog", (req, res) => {
-  // we want to first create the instance of the blog
-  const blog = new Blog({
-    title: "new blog 2",
-    snippet: "about my new blog",
-    body: "more about my new blog",
-  });
-
-  blog
-    .save()
-    .then((result) => {
-      // res.render("index");
-      res.json(result);
-    })
-    .catch((err) => {
-      console.log(err);
-    });
-});
-
 app.get("/", (req, res) => {
-  Blog.find()
-    .sort({ createdAt: -1 })
-    .then((result) => {
-      res.status(200).json(result);
-    })
-    .catch((err) => {
-      console.log(err);
-    });
+  // res.json("")
+  res.send("<h1> Samheart</h1>");
 });
 
 // this is new
