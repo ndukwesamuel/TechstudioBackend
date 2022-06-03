@@ -14,9 +14,20 @@ mongoose
 app.use(express.json());
 app.use(cors());
 
-app.get("/", (req, res) => {
+app.get("/test", (req, res) => {
   // res.json("")
   res.send("<h1> Samheart</h1>");
+});
+
+app.get("/", (req, res) => {
+  // res.json("")
+  let data = [
+    { name: "tunde" },
+    { name: "emeka" },
+    { name: "kaka" },
+    { name: "peter" },
+  ];
+  res.json(data);
 });
 
 // this is new
